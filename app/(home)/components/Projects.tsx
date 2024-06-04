@@ -1,31 +1,68 @@
 import React from "react";
-import { SiReactquery, SiTailwindcss } from "react-icons/si";
+import {
+  SiFigma,
+  SiFirebase,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNotion,
+  SiReactquery,
+  SiTailwindcss,
+} from "react-icons/si";
 import Title from "./Title";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import tranquille from "@/public/Tranquille.png";
+import threads from "@/public/threads.png";
+import pokedex from "@/public/pokedex.png";
+import portfolio from "@/public/portfolio.png";
 
 export default function Projects() {
   const projects = [
     {
       title: "Tranquille",
-      tech: [SiReactquery, SiTailwindcss],
+      tech: [
+        SiReactquery,
+        SiJavascript,
+        SiFirebase,
+        SiTailwindcss,
+        SiFigma,
+        SiNotion,
+      ],
+
       link: "https://tranquille-project.netlify.app/",
-      cover: "",
+      cover: tranquille,
       background: "bg-indigo-500",
     },
     {
-      title: "Calendar",
-      tech: [SiReactquery, SiTailwindcss],
-      link: "https://tranquille-project.netlify.app/",
-      cover: "",
+      title: "Threads",
+      tech: [
+        SiReactquery,
+        SiJavascript,
+        SiNextdotjs,
+        SiMongodb,
+        SiTailwindcss,
+        SiNotion,
+      ],
+      link: "https://threadstest.netlify.app/",
+      cover: threads,
       background: "bg-green-500",
     },
     {
-      title: "Threads",
-      tech: [SiReactquery, SiTailwindcss],
-      link: "https://threadstest.netlify.app/",
-      cover: "",
+      title: "Pokédex",
+      tech: [SiReactquery, SiJavascript, , SiFirebase, SiTailwindcss, SiNotion],
+      link: "https://pokepokedex-project.netlify.app/",
+
+      cover: pokedex,
+      background: "bg-green-500",
+    },
+    {
+      title: "Portfolio",
+      tech: [SiReactquery, SiJavascript, SiNextdotjs, SiTailwindcss, SiNotion],
+      link: "https://tranquille-project.netlify.app/",
+      cover: portfolio,
+
       background: "bg-indigo-500",
     },
   ];
@@ -38,7 +75,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 sm:grid-cols-2 pt-20 gap-5">
         {projects.map((project, index) => {
           return (
-            <Link href={project.link} key={index}>
+            <Link target="blank" href={project.link} key={index}>
               <div className={cn("p-5 rounded-md", project.background)}>
                 <DirectionAwareHover
                   imageUrl={project.cover}
