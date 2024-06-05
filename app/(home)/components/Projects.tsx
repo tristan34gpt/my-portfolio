@@ -56,7 +56,7 @@ export default function Projects() {
     {
       title: "Portfolio",
       tech: [SiReactquery, SiJavascript, SiNextdotjs, SiTailwindcss, SiNotion],
-      link: "https://tranquille-project.netlify.app/",
+      link: "https://tristan-vera.netlify.app/",
       cover: "/portfolio.png",
 
       background: "bg-indigo-500",
