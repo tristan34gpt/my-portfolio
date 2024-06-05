@@ -13,10 +13,6 @@ import Title from "./Title";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
-import tranquille from "@/public/Tranquille.png";
-import threads from "@/public/threads.png";
-import pokedex from "@/public/pokedex.png";
-import portfolio from "@/public/portfolio.png";
 
 export default function Projects() {
   const projects = [
@@ -32,7 +28,7 @@ export default function Projects() {
       ],
 
       link: "https://tranquille-project.netlify.app/",
-      cover: tranquille,
+      cover: "/tranquille.png",
       background: "bg-indigo-500",
     },
     {
@@ -46,7 +42,7 @@ export default function Projects() {
         SiNotion,
       ],
       link: "https://threadstest.netlify.app/",
-      cover: threads,
+      cover: "/threads.png",
       background: "bg-green-500",
     },
     {
@@ -54,14 +50,14 @@ export default function Projects() {
       tech: [SiReactquery, SiJavascript, , SiFirebase, SiTailwindcss, SiNotion],
       link: "https://pokepokedex-project.netlify.app/",
 
-      cover: pokedex,
+      cover: "/pokedex.png",
       background: "bg-green-500",
     },
     {
       title: "Portfolio",
       tech: [SiReactquery, SiJavascript, SiNextdotjs, SiTailwindcss, SiNotion],
       link: "https://tranquille-project.netlify.app/",
-      cover: portfolio,
+      cover: "/portfolio.png",
 
       background: "bg-indigo-500",
     },
@@ -84,9 +80,10 @@ export default function Projects() {
                   <div className="space-y-5">
                     <h1 className="text-2xl font-bold ">{project.title}</h1>
                     <div className="flex items-center gap-5">
-                      {project.tech.map((Icon, index) => {
-                        return <Icon className="w-8 h-8" key={index} />;
-                      })}
+                      {project.tech.map(
+                        (Icon, index) =>
+                          Icon && <Icon key={index} className="w-8 h-8" />
+                      )}
                     </div>
                   </div>
                 </DirectionAwareHover>
